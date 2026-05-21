@@ -1,4 +1,4 @@
-fetch("/components/footer.html")
+fetch("./components/navbar.html")
 .then(response => response.text())
 .then(data => {
 
