@@ -1,0 +1,27 @@
+body{
+    margin:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        #1A1A1A 0%,
+        #000000 50%,
+        #1A1A1A 100%
+    );
+
+    overflow:hidden;
+}
+
+/* CANVAS */
+
+#hex-bg{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:-1;
+}

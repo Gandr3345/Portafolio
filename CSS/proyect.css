@@ -1,0 +1,677 @@
+/* ===================================================== */
+/* VARIABLES */
+/* ===================================================== */
+
+:root{
+
+    --bg-main:#000000;
+    --bg-secondary:#1A1A1A;
+
+    --accent:#D2F603;
+
+    --text-main:#E0E0E0;
+    --text-secondary:#8d8d8d;
+
+}
+
+/* ===================================================== */
+/* RESET */
+/* ===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===================================================== */
+/* HTML */
+/* ===================================================== */
+
+html{
+    overflow-y:auto;
+    scroll-behavior:smooth;
+}
+
+/* ===================================================== */
+/* BODY */
+/* ===================================================== */
+
+body{
+
+    font-family:Arial, sans-serif;
+
+    background:var(--bg-main);
+
+    color:var(--text-main);
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    min-height:100vh;
+}
+
+/* ===================================================== */
+/* BACKGROUND */
+/* ===================================================== */
+
+#hex-bg{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:-10;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #1A1A1A 0%,
+        #000000 70%
+    );
+}
+
+/* ===================================================== */
+/* PAGE */
+/* ===================================================== */
+
+.projects-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:170px 8% 120px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+/* ===================================================== */
+/* HEADER */
+/* ===================================================== */
+
+.projects-header{
+
+    margin-bottom:90px;
+}
+
+/* ===================================================== */
+
+.page-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:0.95rem;
+
+    color:var(--accent);
+
+    margin-bottom:25px;
+
+    letter-spacing:1px;
+}
+
+/* ===================================================== */
+
+.projects-header h1{
+
+    font-size:5rem;
+
+    margin-bottom:25px;
+
+    line-height:1;
+
+    text-shadow:
+    0 0 10px rgba(210,246,3,0.35),
+    0 0 35px rgba(210,246,3,0.12);
+}
+
+/* ===================================================== */
+
+.projects-header p{
+
+    max-width:700px;
+
+    color:var(--text-secondary);
+
+    line-height:1.9;
+
+    font-size:1.1rem;
+}
+
+/* ===================================================== */
+/* FEATURED PROJECT */
+/* ===================================================== */
+
+.featured-project{
+
+    width:100%;
+
+    background:
+    rgba(255,255,255,0.03);
+
+    border:
+    1px solid rgba(255,255,255,0.05);
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    display:grid;
+
+    /* MÁS ANCHA LA IMAGEN */
+    grid-template-columns:1.5fr 1fr;
+
+    margin-bottom:100px;
+
+    transition:0.4s ease;
+
+    backdrop-filter:blur(10px);
+
+    position:relative;
+}
+
+/* ===================================================== */
+
+.featured-project:hover{
+
+    transform:
+    translateY(-8px);
+
+    border-color:
+    rgba(210,246,3,0.25);
+
+    box-shadow:
+    0 0 40px rgba(210,246,3,0.08);
+}
+
+/* ===================================================== */
+/* IMAGE */
+/* ===================================================== */
+
+.featured-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    display:block;
+}
+
+/* ===================================================== */
+
+.image-placeholder{
+
+    width:100%;
+
+    height:100%;
+
+    min-height:520px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+    rgba(255,255,255,0.02);
+}
+
+/* ===================================================== */
+/* IMAGEN */
+/* ===================================================== */
+
+.image-placeholder img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    display:block;
+
+    transition:0.6s ease;
+
+    transform:scale(1);
+}
+
+/* ===================================================== */
+/* DEGRADADO OSCURO */
+/* ===================================================== */
+
+.image-placeholder::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:0;
+
+    width:45%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.35) 35%,
+        rgba(0,0,0,0.75) 100%
+    );
+
+    z-index:2;
+
+    pointer-events:none;
+}
+
+/* ===================================================== */
+/* HOVER IMAGEN */
+/* ===================================================== */
+
+.featured-project:hover .image-placeholder img{
+
+    transform:scale(1.05);
+}
+
+/* ===================================================== */
+/* CONTENT */
+/* ===================================================== */
+
+.featured-content{
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    position:relative;
+
+    z-index:3;
+
+    background:
+    linear-gradient(
+        to left,
+        rgba(0,0,0,0.97),
+        rgba(0,0,0,0.88)
+    );
+}
+
+/* ===================================================== */
+
+.featured-content h2{
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+}
+
+/* ===================================================== */
+
+.featured-content p{
+
+    color:var(--text-secondary);
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+    
+    text-align: justify;
+}
+
+/* ===================================================== */
+/* TECH */
+/* ===================================================== */
+
+.project-tech{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:40px;
+}
+
+/* ===================================================== */
+
+.project-tech span{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    background:
+    rgba(255,255,255,0.03);
+
+    font-size:0.9rem;
+
+    transition:0.35s ease;
+}
+
+/* ===================================================== */
+
+.project-tech span:hover{
+
+    background:
+    rgba(210,246,3,0.08);
+
+    border-color:
+    rgba(210,246,3,0.25);
+
+    color:var(--accent);
+}
+
+/* ===================================================== */
+/* BUTTONS */
+/* ===================================================== */
+
+.project-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+/* ===================================================== */
+
+.primary-btn,
+.secondary-btn{
+
+    padding:16px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    transition:0.35s ease;
+
+    font-weight:600;
+}
+
+/* ===================================================== */
+
+.primary-btn{
+
+    background:var(--accent);
+
+    color:#000;
+}
+
+/* ===================================================== */
+
+.primary-btn:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 0 30px rgba(210,246,3,0.35);
+}
+
+/* ===================================================== */
+
+.secondary-btn{
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    color:var(--text-main);
+
+    background:
+    rgba(255,255,255,0.02);
+}
+
+/* ===================================================== */
+
+.secondary-btn:hover{
+
+    border-color:
+    rgba(210,246,3,0.25);
+
+    color:var(--accent);
+
+    background:
+    rgba(210,246,3,0.04);
+}
+
+/* ===================================================== */
+/* GRID */
+/* ===================================================== */
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(320px,1fr));
+
+    gap:35px;
+}
+
+/* ===================================================== */
+/* CARD */
+/* ===================================================== */
+
+.project-card{
+
+    background:
+    rgba(255,255,255,0.03);
+
+    border:
+    1px solid rgba(255,255,255,0.05);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    transition:0.4s ease;
+
+    backdrop-filter:blur(10px);
+}
+
+/* ===================================================== */
+
+.project-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:
+    rgba(210,246,3,0.2);
+
+    box-shadow:
+    0 0 35px rgba(210,246,3,0.08);
+}
+
+/* ===================================================== */
+/* CARD IMAGE */
+/* ===================================================== */
+
+.card-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    position: relative;
+}
+
+.card-image .image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: unset; /* Elimina el min-height heredado */
+}
+
+.card-image .image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* Llena todo el espacio */
+    object-position: center top; /* Centrado, priorizando la parte superior */
+    display: block;
+    transition: 0.4s ease;
+}
+
+/* ===================================================== */
+/* CARD CONTENT */
+/* ===================================================== */
+
+.card-content{
+
+    padding:30px;
+}
+
+/* ===================================================== */
+
+.card-content h3{
+
+    font-size:1.7rem;
+
+    margin-bottom:15px;
+}
+
+/* ===================================================== */
+
+.card-content p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+}
+
+/* ===================================================== */
+/* RESPONSIVE TABLET */
+/* ===================================================== */
+
+@media(max-width:1100px){
+
+    .featured-project{
+
+        grid-template-columns:1fr;
+    }
+
+    .image-placeholder{
+
+        min-height:420px;
+    }
+
+}
+
+/* ===================================================== */
+/* RESPONSIVE MOBILE */
+/* ===================================================== */
+
+@media(max-width:768px){
+
+    .projects-page{
+
+        padding:
+        140px 20px 100px;
+    }
+
+    .projects-header{
+
+        text-align:center;
+    }
+
+    .projects-header h1{
+
+        font-size:3.5rem;
+    }
+
+    .projects-header p{
+
+        margin:auto;
+    }
+
+    .featured-content{
+
+        padding:40px 30px;
+    }
+
+    .featured-content h2{
+
+        font-size:2.2rem;
+    }
+
+    .image-placeholder{
+
+        min-height:300px;
+    }
+
+    .project-buttons{
+
+        flex-direction:column;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+
+        width:100%;
+
+        text-align:center;
+    }
+
+}
+
+/* ===================================================== */
+/* RESPONSIVE SMALL MOBILE */
+/* ===================================================== */
+
+@media(max-width:500px){
+
+    .projects-header h1{
+
+        font-size:2.6rem;
+    }
+
+    .featured-content h2{
+
+        font-size:1.8rem;
+    }
+
+    .featured-content{
+
+        padding:30px 22px;
+    }
+
+    .card-content{
+
+        padding:25px 20px;
+    }
+
+    .projects-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .image-placeholder{
+
+        min-height:240px;
+    }
+
+}
