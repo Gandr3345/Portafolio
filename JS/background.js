@@ -9,11 +9,30 @@ const TOTAL = 55;
 /* COLORS */
 /* ========================= */
 
-const colors = [
-    "210,246,3",   // neon
-    "224,224,224", // white soft
-    "26,26,26"     // dark
-];
+function getThemeColors(){
+
+    const isLight =
+    document.documentElement.getAttribute("data-theme") === "light";
+
+    if(isLight){
+
+        return [
+            "0,70,181",      // azul eléctrico
+            "147,197,253",   // azul hielo
+            "56,189,248"     // cyan
+        ];
+
+    } else {
+
+        return [
+            "210,246,3",     // neon
+            "224,224,224",   // white soft
+            "26,26,26"       // dark
+        ];
+
+    }
+
+}
 
 /* ========================= */
 
@@ -66,6 +85,8 @@ class Hexagon{
         this.fade =
         0.002 + Math.random() * 0.004;
 
+        const colors = getThemeColors();
+
         this.color =
         colors[
             Math.floor(
@@ -74,7 +95,8 @@ class Hexagon{
         ];
 
         this.neon =
-        this.color === "210,246,3";
+        this.color === "210,246,3" ||
+        this.color === "0,70,181";
     }
 
     draw(){
@@ -133,7 +155,13 @@ class Hexagon{
 
         }else{
 
-            ctx.filter = "blur(8px)";
+            const isLight =
+            document.documentElement.getAttribute("data-theme") === "light";
+
+            ctx.filter =
+            isLight
+            ? "blur(4px)"
+            : "blur(8px)";
 
         }
 
@@ -210,8 +238,13 @@ function animate(){
         canvas.height
     );
 
+    const isLight =
+    document.documentElement.getAttribute("data-theme") === "light";
+
     ctx.globalCompositeOperation =
-    "screen";
+    isLight
+    ? "source-over"
+    : "screen";
 
     hexagons.forEach(hex => {
 

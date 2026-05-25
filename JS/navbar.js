@@ -14,37 +14,47 @@ fetch("./components/navbar.html")
     /* THEME TOGGLE */
     /* ========================= */
 
-        const toggle =
-        document.getElementById("theme-toggle");
+    const toggle =
+    document.getElementById("theme-toggle");
 
-        const icon =
-        toggle.querySelector("i");
+    const icon =
+    toggle.querySelector("i");
 
-        toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", () => {
 
-            const currentTheme =
-            document.documentElement.getAttribute("data-theme");
+        const currentTheme =
+        document.documentElement.getAttribute("data-theme");
 
-            if(currentTheme === "light"){
+        if(currentTheme === "light"){
 
-                document.documentElement.removeAttribute("data-theme");
+            document.documentElement.removeAttribute("data-theme");
 
-                icon.classList.remove("fa-sun");
-                icon.classList.add("fa-moon");
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
 
-            } else {
+        } else {
 
-                document.documentElement.setAttribute(
-                    "data-theme",
-                    "light"
-                );
+            document.documentElement.setAttribute(
+                "data-theme",
+                "light"
+            );
 
-                icon.classList.remove("fa-moon");
-                icon.classList.add("fa-sun");
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
 
-            }
+        }
 
-        });
+        /* ========================= */
+        /* UPDATE HEXAGONS */
+        /* ========================= */
+
+        if(window.createHexagons){
+
+            window.createHexagons();
+
+        }
+
+    });
 
     /* ========================= */
     /* ACTIVE LINK */
@@ -69,6 +79,7 @@ fetch("./components/navbar.html")
 
                 currentSection =
                 section.getAttribute("id");
+
             }
 
         });
@@ -85,7 +96,10 @@ fetch("./components/navbar.html")
             ){
 
                 link.classList.add("active");
+
             }
+
+            /* PAGINA PROYECTOS */
 
             if(
                 window.location.pathname.includes("proyectos.html") &&
@@ -93,11 +107,16 @@ fetch("./components/navbar.html")
             ){
 
                 link.classList.add("active");
+
             }
 
         });
 
     }
+
+    /* ========================= */
+    /* SCROLL */
+    /* ========================= */
 
     window.addEventListener(
         "scroll",

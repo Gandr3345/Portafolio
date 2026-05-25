@@ -1,255 +1,116 @@
+/**CSS DE NAVBAR**/
+
 /****************************************************************
                         NAVBAR
 ****************************************************************/
 
-.header{
-    position:fixed;
-
-    top:25px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:100%;
-
-    display:flex;
-    justify-content:center;
-
-    z-index:9999;
+.header {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 9999;
 }
 
-/* ================================================= */
-
-.navbar{
-    width:1100px;
-    height:80px;
-
-    padding:0 30px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    border-radius:60px;
-
-    background:
-    rgba(15,15,15,0.88);
-
-    border:
-    1px solid rgba(210,246,3,0.12);
-
-    backdrop-filter:blur(12px);
-
-    box-shadow:
-    0 0 30px rgba(210,246,3,0.05);
+.navbar {
+    width: 1100px;
+    height: 80px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 60px;
+    background: color-mix(in srgb, var(--bg-secondary) 88%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 5%, transparent);
 }
 
-/* ================================================= */
-
-.logo{
-    color:white;
-
-    font-size:1.2rem;
-
-    font-weight:700;
-}
-
-/* ================================================= */
-
-.nav-links{
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-    list-style:none;
-}
-
-/* ================================================= */
-
-.nav-links a{
-    text-decoration:none;
-
-    color:#9f9f9f;
-
-    padding:14px 24px;
-
-    border-radius:40px;
-
-    transition:0.35s ease;
-
-    font-size:0.95rem;
-}
-
-/* ================================================= */
-
-.nav-links a:hover{
-    color:white;
-
-    background:
-    rgba(210,246,3,0.08);
-}
-
-/* ================================================= */
-
-.nav-links a.active{
-    background:#D2F603;
-
-    color:#000;
-
-    font-weight:700;
-
-    box-shadow:
-    0 0 25px rgba(210,246,3,0.45);
-}
-
-/* ================================================= */
-
-.nav-right{
-    display:flex;
-    align-items:center;
-}
-
-/* ================================================= */
-
-.theme-btn{
-    width:42px;
-    height:42px;
-
-    border-radius:50%;
-
-    border:none;
-
-    cursor:pointer;
-
-    background:
-    rgba(255,255,255,0.05);
-
-    color:#D2F603;
-
-    transition:0.3s ease;
-}
-
-/* ================================================= */
-
-.theme-btn:hover{
-    transform:scale(1.08);
-
-    background:#D2F603;
-
-    color:#000;
-}
-/****************************************************************
-                color cambiante al selecionar
-*****************************************************************/
-/* ========================= */
-/* NAV LINKS */
-/* ========================= */
-
-.nav-links a{
-
-    color:#E0E0E0;
-
-    text-decoration:none;
-
-    transition:0.3s ease;
-
-    position:relative;
-}
-
-/* ========================= */
-/* HOVER */
-/* ========================= */
-
-.nav-links a:hover{
-
-    color:#D2F603;
-}
-
-/* ========================= */
-/* ACTIVE */
-/* ========================= */
-
-.nav-links a.active{
-
-    color:#D2F603;
-
-    font-weight:700;
-}
-
-/* LINE */
-
-/* ========================= */
-/* ACTIVE */
-/* ========================= */
-
-.nav-links a.active{
-
-    background:#D2F603;
-
-    color:#000000;
-
-    font-weight:700;
-
-    padding:10px 18px;
-
-    border-radius:30px;
-
-    box-shadow:
-    0 0 20px rgba(210,246,3,0.35);
-}
-.nav-links a:hover{
-
-    color:#D2F603;
-}
-.nav-links a.active:hover{
-
-    color:#000000;
-}
-
-#theme-toggle{
-    background: transparent;
-    border: none;
-    cursor: pointer;
+.logo {
     color: var(--text-main);
     font-size: 1.2rem;
-    transition: 0.3s;
+    font-weight: 700;
 }
 
-#theme-toggle:hover{
-    color: var(--accent);
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    list-style: none;
 }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    padding: 14px 24px;
+    border-radius: 40px;
+    transition: 0.35s ease;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.nav-links a.active {
+    background: var(--accent);
+    color: var(--bg-main);
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.nav-links a.active:hover {
+    color: var(--bg-main);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+#theme-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: color-mix(in srgb, var(--text-main) 5%, transparent);
+    color: var(--text-main);
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.08);
+    background: var(--accent);
+    color: var(--bg-main);
+}
+
 /****************************************************************
                     RESPONSIVE
 ****************************************************************/
 
-@media(max-width:1150px){
-
-    .navbar{
-        width:95%;
-    }
-
+@media (max-width: 1150px) {
+    .navbar { width: 95%; }
 }
 
-@media(max-width:768px){
-
-    .navbar{
-        height:auto;
-
-        padding:20px;
-
-        flex-direction:column;
-
-        gap:20px;
-
-        border-radius:30px;
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 30px;
     }
-
-    .nav-links{
-        flex-wrap:wrap;
-
-        justify-content:center;
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
 }
