@@ -703,6 +703,9 @@ section {
     transform: translateY(-4px);
     box-shadow: 0 0 35px rgba(210, 246, 3, 0.4);
 }
+.contact-card{
+    text-decoration:none;
+}
 /* ===================================================== */
 /* DIVIDER LINE */
 /* ===================================================== */
