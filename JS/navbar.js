@@ -20,6 +20,32 @@ fetch("./components/navbar.html")
     const icon =
     toggle.querySelector("i");
 
+    /* ========================= */
+    /* LOAD SAVED THEME */
+    /* ========================= */
+
+    const savedTheme =
+    localStorage.getItem("theme");
+
+    if(savedTheme === "light"){
+         
+        document.documentElement.setAttribute(
+            "data-theme",
+            "light"
+        );
+
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+
+        if(window.createHexagons){
+            window.createHexagons();
+        }  
+    }
+
+    /* ========================= */
+    /* TOGGLE THEME */
+    /* ========================= */
+
     toggle.addEventListener("click", () => {
 
         const currentTheme =
@@ -29,6 +55,11 @@ fetch("./components/navbar.html")
 
             document.documentElement.removeAttribute("data-theme");
 
+            localStorage.setItem(
+                "theme",
+                "dark"
+            );
+
             icon.classList.remove("fa-sun");
             icon.classList.add("fa-moon");
 
@@ -36,6 +67,11 @@ fetch("./components/navbar.html")
 
             document.documentElement.setAttribute(
                 "data-theme",
+                "light"
+            );
+
+            localStorage.setItem(
+                "theme",
                 "light"
             );
 
@@ -98,8 +134,6 @@ fetch("./components/navbar.html")
                 link.classList.add("active");
 
             }
-
-            /* PAGINA PROYECTOS */
 
             if(
                 window.location.pathname.includes("proyectos.html") &&

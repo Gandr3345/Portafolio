@@ -260,3 +260,4 @@ function animate(){
 }
 
 animate();
+window.createHexagons = createHexagons;
