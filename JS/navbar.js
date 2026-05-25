@@ -11,6 +11,42 @@ fetch("./components/navbar.html")
     document.querySelectorAll("section[id]");
 
     /* ========================= */
+    /* THEME TOGGLE */
+    /* ========================= */
+
+        const toggle =
+        document.getElementById("theme-toggle");
+
+        const icon =
+        toggle.querySelector("i");
+
+        toggle.addEventListener("click", () => {
+
+            const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+
+            if(currentTheme === "light"){
+
+                document.documentElement.removeAttribute("data-theme");
+
+                icon.classList.remove("fa-sun");
+                icon.classList.add("fa-moon");
+
+            } else {
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    "light"
+                );
+
+                icon.classList.remove("fa-moon");
+                icon.classList.add("fa-sun");
+
+            }
+
+        });
+
+    /* ========================= */
     /* ACTIVE LINK */
     /* ========================= */
 
@@ -51,8 +87,6 @@ fetch("./components/navbar.html")
                 link.classList.add("active");
             }
 
-            /* PAGINA PROYECTOS */
-
             if(
                 window.location.pathname.includes("proyectos.html") &&
                 href.includes("proyectos.html")
@@ -64,10 +98,6 @@ fetch("./components/navbar.html")
         });
 
     }
-
-    /* ========================= */
-    /* SCROLL */
-    /* ========================= */
 
     window.addEventListener(
         "scroll",
